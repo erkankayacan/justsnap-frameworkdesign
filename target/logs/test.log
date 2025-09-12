@@ -1,0 +1,40 @@
+2025-09-12 12:03:11 INFO  org.testng.internal.Utils - [XmlSuite] [WARN] 'parallel' value 'false' is no longer valid, defaulting to 'none'.
+2025-09-12 12:03:11 INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Erkan Kayacan\IdeaProjects\justsnap-frameworkdesign\testng.xml
+
+2025-09-12 12:03:12 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.82 (resolved driver for Chrome 140)
+2025-09-12 12:03:12 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Erkan Kayacan\.cache\selenium\chromedriver\win64\140.0.7339.82\chromedriver.exe
+2025-09-12 12:03:23 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.82 (resolved driver for Chrome 140)
+2025-09-12 12:03:23 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Erkan Kayacan\.cache\selenium\chromedriver\win64\140.0.7339.82\chromedriver.exe
+2025-09-12 12:03:33 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.82 (resolved driver for Chrome 140)
+2025-09-12 12:03:33 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Erkan Kayacan\.cache\selenium\chromedriver\win64\140.0.7339.82\chromedriver.exe
+2025-09-12 12:03:43 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.82 (resolved driver for Chrome 140)
+2025-09-12 12:03:43 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Erkan Kayacan\.cache\selenium\chromedriver\win64\140.0.7339.82\chromedriver.exe
+2025-09-12 12:03:53 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.82 (resolved driver for Chrome 140)
+2025-09-12 12:03:53 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Erkan Kayacan\.cache\selenium\chromedriver\win64\140.0.7339.82\chromedriver.exe
+2025-09-12 12:04:03 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.82 (resolved driver for Chrome 140)
+2025-09-12 12:04:03 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Erkan Kayacan\.cache\selenium\chromedriver\win64\140.0.7339.82\chromedriver.exe
+2025-09-12 12:04:13 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.82 (resolved driver for Chrome 140)
+2025-09-12 12:04:13 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Erkan Kayacan\.cache\selenium\chromedriver\win64\140.0.7339.82\chromedriver.exe
+2025-09-12 12:04:23 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.82 (resolved driver for Chrome 140)
+2025-09-12 12:04:23 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Erkan Kayacan\.cache\selenium\chromedriver\win64\140.0.7339.82\chromedriver.exe
+2025-09-12 12:04:33 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.82 (resolved driver for Chrome 140)
+2025-09-12 12:04:33 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Erkan Kayacan\.cache\selenium\chromedriver\win64\140.0.7339.82\chromedriver.exe
+2025-09-12 12:04:43 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.82 (resolved driver for Chrome 140)
+2025-09-12 12:04:43 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Erkan Kayacan\.cache\selenium\chromedriver\win64\140.0.7339.82\chromedriver.exe
+2025-09-12 12:04:53 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.82 (resolved driver for Chrome 140)
+2025-09-12 12:04:53 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Erkan Kayacan\.cache\selenium\chromedriver\win64\140.0.7339.82\chromedriver.exe
+2025-09-12 12:05:03 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.82 (resolved driver for Chrome 140)
+2025-09-12 12:05:03 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Erkan Kayacan\.cache\selenium\chromedriver\win64\140.0.7339.82\chromedriver.exe
+2025-09-12 12:05:13 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.82 (resolved driver for Chrome 140)
+2025-09-12 12:05:13 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Erkan Kayacan\.cache\selenium\chromedriver\win64\140.0.7339.82\chromedriver.exe
+2025-09-12 12:05:23 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.82 (resolved driver for Chrome 140)
+2025-09-12 12:05:23 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Erkan Kayacan\.cache\selenium\chromedriver\win64\140.0.7339.82\chromedriver.exe
+2025-09-12 12:05:32 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.82 (resolved driver for Chrome 140)
+2025-09-12 12:05:32 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Erkan Kayacan\.cache\selenium\chromedriver\win64\140.0.7339.82\chromedriver.exe
+2025-09-12 12:05:42 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.82 (resolved driver for Chrome 140)
+2025-09-12 12:05:42 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Erkan Kayacan\.cache\selenium\chromedriver\win64\140.0.7339.82\chromedriver.exe
+2025-09-12 12:05:52 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.82 (resolved driver for Chrome 140)
+2025-09-12 12:05:52 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Erkan Kayacan\.cache\selenium\chromedriver\win64\140.0.7339.82\chromedriver.exe
+2025-09-12 12:06:08 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.82 (resolved driver for Chrome 140)
+2025-09-12 12:06:08 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Erkan Kayacan\.cache\selenium\chromedriver\win64\140.0.7339.82\chromedriver.exe

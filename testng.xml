@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="E2E Suite" parallel="false">
+  <parameter name="env" value="DEV"/>
+  <parameter name="browser" value="chrome"/>
+  <test name="UI Suites">
+    <packages>
+      <package name="com.example.tests.ui"/>
+    </packages>
+  </test>
+  <test name="API Suites">
+    <packages>
+      <package name="com.example.tests.api"/>
+    </packages>
+  </test>
+  <test name="Integration Suites">
+    <packages>
+      <package name="com.example.tests.integration"/>
+    </packages>
+  </test>
+</suite>

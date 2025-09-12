@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="DatabaseSuite" verbose="1" parallel="false">
+
+    <test name="DatabaseTests">
+        <packages>
+            <!-- This will include all classes under com.example.tests.db -->
+            <package name="com.example.tests.db"/>
+        </packages>
+    </test>
+
+</suite>
