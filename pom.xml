@@ -143,20 +143,20 @@
 
   <build>
     <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.5.3</version>
-        <configuration>
-          <suiteXmlFiles>
-            <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
-            <suiteXmlFile>src/test/resources/testng-db.xml</suiteXmlFile>
-          </suiteXmlFiles>
-          <systemPropertyVariables>
-            <log4j.configurationFile>src/main/resources/log4j2.xml</log4j.configurationFile>
-          </systemPropertyVariables>
-        </configuration>
-      </plugin>
+     <plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-surefire-plugin</artifactId>
+  <version>3.5.3</version>
+  <configuration>
+    <suiteXmlFiles>
+     
+      <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+      <suiteXmlFile>src/test/resources/testng-db.xml</suiteXmlFile>
+     
+    </suiteXmlFiles>
+  </configuration>
+</plugin>
+
     </plugins>
   </build>
 </project>
