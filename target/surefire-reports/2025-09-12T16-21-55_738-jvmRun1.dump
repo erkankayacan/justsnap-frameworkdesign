@@ -1,4 +1,4 @@
-# Created at 2025-09-12T15:52:33.181
+# Created at 2025-09-12T16:21:56.422
 org.apache.maven.surefire.api.testset.TestSetFailedException: Suite file C:\Users\Erkan Kayacan\IdeaProjects\justsnap-frameworkdesign\src\test\resources\*.xml is not a valid file
 	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.locateTestSets(TestNGXmlTestSuite.java:89)
 	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)

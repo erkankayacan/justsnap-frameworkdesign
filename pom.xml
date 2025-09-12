@@ -149,7 +149,8 @@
         <version>3.5.3</version>
         <configuration>
           <suiteXmlFiles>
-            <suiteXmlFile>src/test/resources/*.xml</suiteXmlFile>
+            <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+            <suiteXmlFile>src/test/resources/testng-db.xml</suiteXmlFile>
           </suiteXmlFiles>
           <systemPropertyVariables>
             <log4j.configurationFile>src/main/resources/log4j2.xml</log4j.configurationFile>
