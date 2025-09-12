@@ -150,8 +150,8 @@
   <configuration>
     <suiteXmlFiles>
      
-      <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
-      <suiteXmlFile>src/test/resources/testng-db.xml</suiteXmlFile>
+      <suiteXmlFile>testng.xml</suiteXmlFile>
+      <suiteXmlFile>testng-db.xml</suiteXmlFile>
      
     </suiteXmlFiles>
   </configuration>
