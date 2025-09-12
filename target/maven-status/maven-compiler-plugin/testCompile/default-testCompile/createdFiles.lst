@@ -1,0 +1,11 @@
+com\example\tests\db\DatabaseIntegrityTests.class
+com\example\tests\db\SqlDemoTests.class
+com\example\tests\ui\CheckoutFlowTests.class
+com\example\tests\ui\ProductAndCartTests.class
+com\example\tests\db\ApiToDbTests.class
+com\example\tests\api\ProductApiTests.class
+com\example\tests\db\BulkPerfTests.class
+com\example\tests\db\TransactionRollbackTests.class
+com\example\tests\integration\CrossValidationTests.class
+com\example\tests\ui\AuthenticationTests.class
+com\example\tests\api\UserApiTests.class

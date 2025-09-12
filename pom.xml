@@ -5,7 +5,7 @@
   <groupId>com.example</groupId>
   <artifactId>justsnap</artifactId>
   <version>1.0.0</version>
-  <name>E-Commerce Test Automation Framework</name>
+  <name>justsnap-frameworkdesign</name>
   <properties>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
