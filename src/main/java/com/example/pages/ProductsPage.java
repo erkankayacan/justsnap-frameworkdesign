@@ -53,8 +53,7 @@ public class ProductsPage extends BasePage {
     }
 
 
-    /** Remove all items currently in cart from the products grid. */
-    /** Remove all items currently in cart from the products grid. */
+
 
 
 
@@ -81,13 +80,13 @@ public class ProductsPage extends BasePage {
                 .toList();
     }
 
-    // 🔹 Helper: wait until inventory is loaded
+    //  Helper: wait until inventory is loaded
     private void ensureInventoryIsReady() {
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.presenceOfAllElementsLocatedBy(productNames));
     }
 
-    // 🔹 Sorting by visible text
+    //  Sorting by visible text
     public void sortByVisibleText(String text) {
         ensureInventoryIsReady();
         WebElement dropdown = driver.findElement(sortDropdown);

@@ -1,6 +1,7 @@
 package com.example.tests.ui;
 
 import com.example.core.BaseTest;
+import com.example.core.DriverFactory;
 import com.example.pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -76,10 +77,10 @@ public class CheckoutFlowTests extends BaseTest {
         String err = info.continueAndGetError("", "Doe", ""); // force errors
 
         // We should still be on step-one and see an error message
-        org.testng.Assert.assertTrue(info.isAtStepOne(), "Should remain on checkout step one when invalid");
-        org.testng.Assert.assertFalse(err.isEmpty(), "Expected validation error to be shown");
-        // Optional stronger check:
-        // org.testng.Assert.assertTrue(err.toLowerCase().contains("required"));
+        Assert.assertTrue(info.isAtStepOne(), "Should remain on checkout step one when invalid");
+        Assert.assertFalse(err.isEmpty(), "Expected validation error to be shown");
+        // Optional check:
+        //Assert.assertTrue(err.toLowerCase().contains("required"));
     }
 
     @Test(description = "Cart does not persist across sessions on SauceDemo")
@@ -93,10 +94,10 @@ public class CheckoutFlowTests extends BaseTest {
             int after = p.cartBadge();
             org.testng.Assert.assertEquals(after, before + 1, "Badge should increment by 1");
 
-            com.example.core.DriverFactory.quit();
-            com.example.core.DriverFactory.init(System.getProperty("browser", "chrome"));
+            DriverFactory.quit();
+            DriverFactory.init(System.getProperty("browser", "chrome"));
 
             ProductsPage p2 = LoginPage.open().loginExpectSuccess("standard_user","secret_sauce");
-            org.testng.Assert.assertEquals(p2.cartBadge(), 0);
+            Assert.assertEquals(p2.cartBadge(), 0);
         }
     }
