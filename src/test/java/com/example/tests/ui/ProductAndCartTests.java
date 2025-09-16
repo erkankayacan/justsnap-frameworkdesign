@@ -13,44 +13,59 @@ import java.util.List;
 public class ProductAndCartTests extends BaseTest {
 
     @Test(description="View product catalog")
-    public void viewProductCatalog(){
-        ProductsPage p = LoginPage.open().loginAs("standard_user","secret_sauce");
+    public void viewProductCatalog() {
+        ProductsPage p = LoginPage.open().loginValid("standard_user","secret_sauce");
         Assert.assertTrue(p.productCount() > 0);
     }
 
+
     @Test(description="Sort products A to Z and Z to A")
-    public void sortProducts(){
-        ProductsPage p = LoginPage.open().loginAs("standard_user","secret_sauce");
-        p.sortByVisibleText("Name (A to Z)");
+    public void sortProducts() {
+        ProductsPage p = LoginPage.open().loginValid("standard_user","secret_sauce");
+
+        p.sortByValue("Name (A to Z)");
         List<String> names = p.productNames();
         Assert.assertEquals(names, names.stream().sorted().toList(), "Should be sorted A-Z");
 
-        p.sortByVisibleText("Name (Z to A)");
+        p.sortByValue("Name (Z to A)");
         List<String> names2 = p.productNames();
-        Assert.assertEquals(names2, names2.stream().sorted(java.util.Comparator.reverseOrder()).toList(), "Should be sorted Z-A");
-
+        Assert.assertEquals(
+                names2,
+                names2.stream().sorted(java.util.Comparator.reverseOrder()).toList(),
+                "Should be sorted Z-A"
+        );
     }
+
 
     @Test(description="Sort prices low-high and high-low")
-    public void sortByPrice(){
-        ProductsPage p = LoginPage.open().loginAs("standard_user","secret_sauce");
-        p.sortByVisibleText("Price (low to high)");
-        List<Double> prices = p.productPrices();
-        Assert.assertEquals(prices, prices.stream().sorted().toList());
+    public void sortByPrice() {
+        ProductsPage p = LoginPage.open().loginValid("standard_user","secret_sauce");
 
-        p.sortByVisibleText("Price (high to low)");
+        p.sortByValue("Price (low to high)");
+        List<Double> prices = p.productPrices();
+        Assert.assertEquals(prices, prices.stream().sorted().toList(), "Should be sorted low→high");
+
+        p.sortByValue("Price (high to low)");
         List<Double> prices2 = p.productPrices();
-        Assert.assertEquals(prices2, prices2.stream().sorted((a,b)->Double.compare(b,a)).toList());
+        Assert.assertEquals(
+                prices2,
+                prices2.stream().sorted((a, b) -> Double.compare(b, a)).toList(),
+                "Should be sorted high→low"
+        );
     }
+
 
     @Test(description="Open product details by name")
-    public void viewProductDetails(){
-        ProductsPage p = LoginPage.open().loginAs("standard_user","secret_sauce");
+    public void viewProductDetails() {
+        ProductsPage p = LoginPage.open().loginValid("standard_user","secret_sauce");
         String name = p.productNames().get(0);
+
         ProductDetailsPage d = p.openProductByName(name);
-        Assert.assertTrue(d.isAt());
-        Assert.assertEquals(d.title(), name);
+
+        Assert.assertTrue(d.isAt(), "Product details page should be displayed");
+        Assert.assertEquals(d.title(), name, "Title should match selected product");
     }
+
 
     @Test
     public void addProductsToCart() {
@@ -74,7 +89,7 @@ public class ProductAndCartTests extends BaseTest {
 
     @Test(description="Remove product from cart")
     public void removeFromCart(){
-        ProductsPage p = LoginPage.open().loginAs("standard_user","secret_sauce");
+        ProductsPage p = LoginPage.open().loginValid("standard_user","secret_sauce");
         p.addToCartAtIndex(0);
         CartPage c = p.clickCartAndGo();
         c.removeFirst();

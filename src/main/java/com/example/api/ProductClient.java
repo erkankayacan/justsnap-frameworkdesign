@@ -1,24 +1,15 @@
 package com.example.api;
 
+import com.example.api.RequestSpecs;
 import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
 
-public class ProductClient extends ApiBase {
-
-    public Response getAll(){
-        return given().spec(spec).when().get("/products");
-    }
-    public Response getById(int id){
-        return given().spec(spec).when().get("/products/{id}", id);
-    }
-    public Response create(String body){
-        return given().spec(spec).body(body).when().post("/products");
-    }
-    public Response update(int id, String body){
-        return given().spec(spec).body(body).when().put("/products/{id}", id);
-    }
-    public Response delete(int id){
-        return given().spec(spec).when().delete("/products/{id}", id);
-    }
+public class ProductClient {
+    public Response getAll()              { return given().spec(RequestSpecs.json("/products")).when().get().then().extract().response(); }
+    public Response getById(int id)       { return given().spec(RequestSpecs.json("/products")).when().get("/"+id).then().extract().response(); }
+    public Response create(Object body)   { return given().spec(RequestSpecs.json("/products")).body(body).when().post().then().extract().response(); }
+    public Response update(int id, Object body){ return given().spec(RequestSpecs.json("/products")).body(body).when().put("/"+id).then().extract().response(); }
+    public Response patch(int id, Object body) { return given().spec(RequestSpecs.json("/products")).body(body).when().patch("/"+id).then().extract().response(); }
+    public Response delete(int id)        { return given().spec(RequestSpecs.json("/products")).when().delete("/"+id).then().extract().response(); }
 }

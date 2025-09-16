@@ -1,6 +1,6 @@
 package com.example.pages;
 
-import com.example.core.BasePage;
+import com.example.pages.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;

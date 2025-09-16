@@ -1,12 +1,4 @@
-2025-09-13 09:50:45 INFO  org.testng.internal.Utils - [XmlSuite] [WARN] 'parallel' value 'false' is no longer valid, defaulting to 'none'.
-2025-09-13 09:50:45 INFO  org.testng.internal.Utils - [TestNG] Running:
-  C:\Users\Erkan Kayacan\IdeaProjects\justsnap-frameworkdesign\testng.xml
+2025-09-16 13:15:04 INFO  org.testng.internal.Utils - [XmlSuite] [WARN] 'parallel' value 'false' is no longer valid, defaulting to 'none'.
+2025-09-16 13:15:04 INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Erkan Kayacan\IdeaProjects\justsnap-frameworkdesign\testng-db.xml
 
-2025-09-13 09:50:46 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.82 (resolved driver for Chrome 140)
-2025-09-13 09:50:46 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Erkan Kayacan\.cache\selenium\chromedriver\win64\140.0.7339.82\chromedriver.exe
-2025-09-13 09:50:57 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.82 (resolved driver for Chrome 140)
-2025-09-13 09:50:57 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Erkan Kayacan\.cache\selenium\chromedriver\win64\140.0.7339.82\chromedriver.exe
-2025-09-13 09:51:07 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.82 (resolved driver for Chrome 140)
-2025-09-13 09:51:07 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Erkan Kayacan\.cache\selenium\chromedriver\win64\140.0.7339.82\chromedriver.exe
-2025-09-13 09:51:17 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.82 (resolved driver for Chrome 140)
-2025-09-13 09:51:17 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Erkan Kayacan\.cache\selenium\chromedriver\win64\140.0.7339.82\chromedriver.exe

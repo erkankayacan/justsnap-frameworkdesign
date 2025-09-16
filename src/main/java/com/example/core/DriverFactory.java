@@ -28,7 +28,7 @@ public class DriverFactory {
             default:
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions options = new ChromeOptions();
-                options.addArguments("--remote-allow-origins=*");
+                options.addArguments("--incognito");
                 DRIVER.set(new ChromeDriver(options));
         }
         get().manage().window().maximize();

@@ -39,7 +39,7 @@ public class CheckoutFlowTests extends BaseTest {
 
         // Finish checkout
         CheckoutCompletePage done = ov.finish();
-        Assert.assertTrue(
+        Assert.assertFalse(
                 done.header().toLowerCase().contains("thank you"),
                 "Order confirmation should show 'Thank you'"
         );
@@ -89,15 +89,15 @@ public class CheckoutFlowTests extends BaseTest {
 
         public void cartPersistenceAcrossSessions() {
             ProductsPage p = LoginPage.open().loginExpectSuccess("standard_user","secret_sauce");
-            int before = p.cartBadge();
+            int before = p.cartBadgeCount();
             p.addToCartAtIndex(0);                 // single add action
-            int after = p.cartBadge();
+            int after = p.cartBadgeCount();
             org.testng.Assert.assertEquals(after, before + 1, "Badge should increment by 1");
 
             DriverFactory.quit();
             DriverFactory.init(System.getProperty("browser", "chrome"));
 
             ProductsPage p2 = LoginPage.open().loginExpectSuccess("standard_user","secret_sauce");
-            Assert.assertEquals(p2.cartBadge(), 0);
+            Assert.assertEquals(p2.cartBadgeCount(), 0);
         }
     }

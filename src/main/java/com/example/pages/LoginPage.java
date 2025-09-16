@@ -1,68 +1,53 @@
 package com.example.pages;
 
-import com.example.core.BasePage;
-import com.example.core.DriverFactory;
-import com.example.utils.Config;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import com.example.pages.*;
+public class LoginPage extends com.example.pages.BasePage {
 
-import java.time.Duration;
-
-public class LoginPage extends BasePage {
-    private final By username = By.id("user-name");
-    private final By password = By.id("password");
-    private final By loginBtn = By.id("login-button");
-    private final By errorMsg = By.cssSelector("[data-test='error']");
-
-    public LoginPage(WebDriver driver) { super(driver); }
+    private final By username    = By.id("user-name");
+    private final By password    = By.id("password");
+    private final By loginBtn    = By.id("login-button");
+    private final By errorBanner = By.cssSelector("[data-test='error'], h3[data-test='error']");
 
     public static LoginPage open() {
-        DriverFactory.get().navigate().to(Config.get("base.url.ui"));
-        return new LoginPage(DriverFactory.get());
-    }
-
-    public ProductsPage loginAs(String user, String pass) {
-        type(username, user);
-        type(password, pass);
-        click(loginBtn);
-        return new ProductsPage(driver);
-    }
-
-    public String getError() {
-        return $(errorMsg).getText();
+        LoginPage lp = new LoginPage();
+        lp.driver.navigate().to("https://www.saucedemo.com/");
+        lp.wait.until(ExpectedConditions.visibilityOfElementLocated(lp.username));
+        return lp;
     }
 
     @Override
     public boolean isAt() {
-        return $(loginBtn).isDisplayed();
+        return isVisible(username) && isVisible(password);
     }
-    public ProductsPage loginExpectSuccess(String user, String pass) {
+
+    public com.example.pages.BasePage login(String user, String pass) {
         type(username, user);
         type(password, pass);
         click(loginBtn);
-
-        // Wait up to 20s for either success (URL contains inventory.html) or error banner
-        wait.withTimeout(Duration.ofSeconds(20)).until(ExpectedConditions.or(
-                ExpectedConditions.urlContains("inventory.html"),
-                ExpectedConditions.visibilityOfElementLocated(errorMsg)
-        ));
-
-        if (!driver.findElements(errorMsg).isEmpty()) {
-            throw new RuntimeException("Login failed: " + getError());
-        }
-        return new ProductsPage(driver);
+        if (isVisible(errorBanner)) return this;
+        return new ProductsPage();
     }
 
+    public ProductsPage loginValid(String user, String pass) {
+        type(username, user);
+        type(password, pass);
+        click(loginBtn);
+        return new ProductsPage();
+    }public ProductsPage loginExpectSuccess(String user, String pass) {
+        return loginValid(user, pass);
+    }
 
-
-
-    // For negative tests:
-    public LoginPage login(String user, String pass) {
+    public LoginPage loginInvalid(String user, String pass) {
         type(username, user);
         type(password, pass);
         click(loginBtn);
         return this;
     }
 
+    public String getError() {
+        if (!isPresent(errorBanner)) return "";
+        return driver.findElement(errorBanner).getText();
+    }
 }

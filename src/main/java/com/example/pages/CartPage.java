@@ -1,16 +1,13 @@
 package com.example.pages;
 
-import com.example.core.BasePage;
 import com.example.core.DriverFactory;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
-import java.util.stream.Collectors;
-
-public class CartPage extends BasePage {
+import com.example.pages.*;
+public class CartPage extends com.example.pages.BasePage {
     private final By cartItem = By.className("cart_item");
 
     private final By cartItems = By.cssSelector(".cart_item");
@@ -20,7 +17,7 @@ public class CartPage extends BasePage {
 
     private final By itemName  = By.className("inventory_item_name");
 
-    public CartPage(WebDriver driver) { super(driver);
+    public CartPage() {
         wait.until(ExpectedConditions.or(
                 ExpectedConditions.urlContains("cart.html"),
                 ExpectedConditions.presenceOfElementLocated(cartItems)
@@ -47,7 +44,7 @@ public class CartPage extends BasePage {
 
     public ProductsPage continueShopping() {
         click(continueShopping);
-        return new ProductsPage(driver);
+        return new ProductsPage();
     }
     public List<String> itemNames() {
         return driver.findElements(itemName)

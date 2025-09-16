@@ -1,49 +1,58 @@
-package com.example.core;
+package com.example.pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import com.example.core.DriverFactory;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.*;
 
 import java.time.Duration;
-import java.util.List;
 
 public abstract class BasePage {
-    protected final WebDriver driver;
-    protected final WebDriverWait wait;
-    private final By checkoutBtn = By.id("checkout");
+    protected WebDriver driver;
+    protected WebDriverWait wait;
 
-    public BasePage(WebDriver driver) {
-        this.driver = DriverFactory.get();
-        this.wait = new WebDriverWait(this.driver, Duration.ofSeconds(10));
+    /** ✅ No-arg path (works with pages that DON'T pass a driver) */
+    protected BasePage() {
+        this.init(DriverFactory.get());
     }
 
-    protected WebElement $(By locator) {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    /** ✅ DI path (works with pages that DO pass a driver via super(driver)) */
+    protected BasePage(WebDriver driver) {
+        this.init(driver);
     }
 
-    protected List<WebElement> findAll(By locator) {
-        return driver.findElements(locator);
+    private void init(WebDriver d) {
+        this.driver = d;
+        this.wait = new WebDriverWait(d, Duration.ofSeconds(10));
+    }
+
+    protected void type(By locator, CharSequence text) {
+        WebElement el = wait.until(ExpectedConditions.elementToBeClickable(locator));
+        el.clear();
+        el.sendKeys(text);
     }
 
     protected void click(By locator) {
-        org.openqa.selenium.WebElement btn =
-                new org.openqa.selenium.support.ui.WebDriverWait(driver, java.time.Duration.ofSeconds(8))
-                        .until(org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable(checkoutBtn));
-        try { btn.click(); } catch (Exception e) {
-            ((org.openqa.selenium.JavascriptExecutor) driver).executeScript("arguments[0].click();", btn);
-        }}
-
-    protected void type(By locator, String text) {
-        WebElement e = $(locator);
-        e.clear();
-        e.sendKeys(text);
+        WebElement el = wait.until(ExpectedConditions.elementToBeClickable(locator));
+        el.click();
     }
 
-    /** Expose driver to other page objects when needed (kept package-private). */
-    WebDriver getDriver() { return this.driver; }
+    protected boolean isVisible(By locator) {
+        try {
+            wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+            return true;
+        } catch (TimeoutException e) {
+            return false;
+        }
+    }
+
+    protected boolean isPresent(By locator) {
+        try {
+            driver.findElement(locator);
+            return true;
+        } catch (NoSuchElementException e) {
+            return false;
+        }
+    }
 
     public abstract boolean isAt();
 }

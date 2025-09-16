@@ -5,6 +5,7 @@ import io.restassured.http.ContentType;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -13,11 +14,7 @@ import static org.hamcrest.Matchers.*;
 public class ProductApiTests {
     private ProductClient client;
 
-    @BeforeClass
-    public void init(){
-        client = new ProductClient();
-        client.setupApi();
-    }
+
 
     @Test(description="GET all products")
     public void getAllProducts(){
@@ -41,6 +38,10 @@ public class ProductApiTests {
         String body = "{\"title\":\"Updated\",\"price\":10.5}";
         client.update(1, body).then().statusCode(anyOf(is(200), is(201)));
     }
+@BeforeClass
+public void init() {
+    client = new ProductClient();   // <-- initialize the same field
+}
 
     @Test(description="DELETE product")
     public void deleteProduct(){
